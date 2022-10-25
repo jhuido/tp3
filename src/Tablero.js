@@ -1,3 +1,4 @@
+const Posicion=require('../src/Posicion')
 function Tablero(){
     this.tablero=[]
     this.crearTablero=function(){
