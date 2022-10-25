@@ -40,5 +40,17 @@ function Tablero(){
         }
         
     }
+    
+    this.cantidadEncendidas=function(){
+        var cont=0;
+        for(var i=0;i<100;i++){
+            for(var j=0;j<100;j++){
+                if(this.tablero[i,j].estadoActual()=="Encendido"){
+                    cont+=1;
+                }
+            }
+        }
+        return cont;
+    }
 }
-module.exports=Tablero
+module.exports=Tablero;
