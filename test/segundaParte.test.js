@@ -60,3 +60,13 @@ test("Cambiar",()=>{
 
 
 })
+
+test("CantidadEncendidas",()=>{
+    var tablero=new Tablero2();
+    tablero.crearTablero();
+    var posicionSuperior=new Posicion2(0,0);
+    var posicionInferior= new Posicion2(2,2);
+    tablero.encender(posicionSuperior,posicionInferior);
+    expect(tablero.cantidadEncendidas()).toBe(9);
+
+})
