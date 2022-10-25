@@ -10,5 +10,15 @@ function Tablero(){
             }
         }
     }
+
+    this.encender=function(verticeSuperior,verticeInferior){
+        var i=verticeSuperior.posiciony;
+        var j=verticeSuperior.posicionx;
+        for(i;i<=verticeInferior.posiciony;i++){
+            for(j;j<=verticeInferior.posicionx;j++){
+                (this.tablero[i,j]).encender();
+            }
+        }
+    }
 }
 module.exports=Tablero
