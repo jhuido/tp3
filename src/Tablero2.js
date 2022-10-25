@@ -39,5 +39,19 @@ function Tablero2(){
             };
         };
     }
+
+    this.cantidadEncendidas=function(){
+        var i;
+        var n=0;
+        var j;
+        for(i=0;i<100;i++){
+            for(j=0;j<100;j++){
+                if((this.tablero[i,j].estadoActual())!=0){
+                    n+=1;
+                }
+            }
+        }
+        return n;
+    }
 }
 module.exports=Tablero2;
