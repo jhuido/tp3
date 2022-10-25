@@ -41,7 +41,7 @@ test("Cambiar",()=>{
     tablero.crearTablero();
     var posicionSuperior=new Posicion2(0,0);
     var posicionInferior= new Posicion2(2,2);
-    tablero.encenderTablero(posicionSuperior,posicionInferior);
+    tablero.encender(posicionSuperior,posicionInferior);
 
     var posicionSup2=new Posicion2(0,0);
     var posocionInf2=new Posicion2(2,1);
