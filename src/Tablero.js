@@ -9,9 +9,6 @@ function Tablero(){
                 this.tablero[i,j]=new Posicion(i,j);
             }
         }
-
-        
-        return rdo;
     }
 }
 module.exports=Tablero

@@ -12,8 +12,7 @@ test("Que no se puedan crear posiciones fuera del tablero",()=>{
 
 test("Crear tablero",()=>{
     var tablero= new Tablero();
-    var rdo=tablero.crearTablero();
-    expect(rdo).toBe("");
+    tablero.crearTablero();
     expect(tablero.tablero[0,1].estadoActual()).toBe("Apagado");
 }) 
 
