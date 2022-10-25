@@ -65,3 +65,13 @@ test("Cambiar rectangulo de luces",()=>{
     expect(tablero.tablero[2,1].estadoActual()).toBe("Apagado");
 
 })
+
+test("Cantidad encendidas",()=>{
+    var tablero= new Tablero();
+    tablero.crearTablero();
+    var verticeSuperior=new Posicion(0,0);
+    var verticeInferior=new Posicion(1,1);
+    tablero.encender(verticeSuperior,verticeSuperior);
+
+    expect(tablero.cantidadEncendidas()).toBe(4);
+})
