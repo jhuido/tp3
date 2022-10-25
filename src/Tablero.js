@@ -1,6 +1,6 @@
 function Tablero(){
     this.tablero=[]
-    this.crearTablero()=function(){
+    this.crearTablero=function(){
         var i=0;
         var j=0;
         for(i;i<100;i++){
