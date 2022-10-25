@@ -9,7 +9,9 @@ function Tablero(){
                 this.tablero[i,j]=new Posicion(i,j);
             }
         }
-        return "Tablero creado";
+
+        
+        return rdo;
     }
 }
 module.exports=Tablero

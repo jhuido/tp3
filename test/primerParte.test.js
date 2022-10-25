@@ -12,6 +12,17 @@ test("Que no se puedan crear posiciones fuera del tablero",()=>{
 
 test("Crear tablero",()=>{
     var tablero= new Tablero();
-    tablero.crearTablero()
+    var rdo=tablero.crearTablero();
+    expect(rdo).toBe("");
     expect(tablero.tablero[0,1].estadoActual()).toBe("Apagado");
+}) 
+
+test("Funcion encender caso cuadrado",()=>{
+    var verticeSuperior=new Posicion(0,0);
+    var verticeInferior=new Posicion(2,2);
+    var tablero= new Tablero();
+    tablero.crearTablero();
+    tablero.encender(verticeSuperior,verticeInferior);
+    expect(tablero.tablero[0,0].estadoActual()).toBe("Encendido");
+
 })
