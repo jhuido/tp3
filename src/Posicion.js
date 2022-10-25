@@ -12,5 +12,10 @@ function Posicion(posiciony,posicionx){
     this.estadoActual=function(){
         return this.estado;
     }
+    this.cambiarEstado=function(estadoActual){
+        this.estado=estadoActual
+    }
+
+
 }
 module.exports=Posicion;
