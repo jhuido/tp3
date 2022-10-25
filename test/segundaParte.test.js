@@ -1,5 +1,8 @@
-test("Encender",()=>{
-    var tablero=new Tablero();
+const Posicion2=require('../src/Posicion2')
+const Tablero2=require('../src/Tablero2')
+
+test("Tablero empiece apagado y funcion Encender",()=>{
+    var tablero=new Tablero2();
     tablero.crearTablero();
     expect(tablero.tablero[0,1].estadoActual()).toBe(0);
 
