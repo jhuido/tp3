@@ -21,4 +21,4 @@ function Tablero(){
         }
     }
 }
-module.exports=Tablero;
+module.exports=Tablero2;
