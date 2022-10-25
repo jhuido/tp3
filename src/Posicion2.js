@@ -18,6 +18,11 @@ function Posicion2(posiciony,posicionx){
     this.encender=function(){
         this.estado+=1;
     }
+    this.apagar=function(){
+        
+        this.estado=this.estado-1;
+        
+    }
     
 
 
