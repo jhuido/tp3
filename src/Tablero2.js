@@ -28,5 +28,16 @@ function Tablero2(){
             }
         }
     }
+    
+    this.cambiar=function(verticeSuperior,verticeInferior){
+        var i=verticeSuperior.posicionx;
+        var j=verticeSuperior.posiciony;
+        for(i;i<=verticeInferior.posiciony;i++){
+            for(j;j<=verticeInferior.posicionx;j++){
+                const estadoAntes=this.tablero[i,j].estadoActual();
+                this.tablero[i,j].cambiarEstado(estadoAntes+2);
+            };
+        };
+    }
 }
 module.exports=Tablero2;
