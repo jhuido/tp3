@@ -1,9 +1,15 @@
 const Posicion2=require('../src/Posicion2')
 const Tablero2=require('../src/Tablero2')
 
-test("Tablero empiece apagado y funcion Encender",()=>{
-    var tablero=new Tablero2();
+var tablero;
+beforeEach(()=>{
+    tablero=new Tablero2();
     tablero.crearTablero();
+})
+
+
+test("Tablero empiece apagado y funcion Encender",()=>{
+
     expect(tablero.tablero[0,1].estadoActual()).toBe(0);
 
     var posicionSuperior=new Posicion2(1,0);
@@ -18,8 +24,7 @@ test("Tablero empiece apagado y funcion Encender",()=>{
 })
 
 test("Apagar",()=>{
-    var tablero=new Tablero2();
-    tablero.crearTablero();
+
     var posicionSuperior=new Posicion2(1,0);
     var posicionInferior= new Posicion2(2,2);
     tablero.encender(posicionSuperior,posicionInferior);
@@ -36,9 +41,6 @@ test("Apagar",()=>{
 
 test("Cambiar",()=>{
 
-
-    var tablero=new Tablero2();
-    tablero.crearTablero();
     var posicionSuperior=new Posicion2(0,0);
     var posicionInferior= new Posicion2(2,2);
     tablero.encender(posicionSuperior,posicionInferior);
@@ -62,8 +64,6 @@ test("Cambiar",()=>{
 })
 
 test("CantidadEncendidas",()=>{
-    var tablero=new Tablero2();
-    tablero.crearTablero();
     var posicionSuperior=new Posicion2(0,0);
     var posicionInferior= new Posicion2(2,2);
     tablero.encender(posicionSuperior,posicionInferior);

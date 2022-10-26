@@ -1,4 +1,5 @@
 const Posicion2=require('../src/Posicion2')
+
 function Tablero2(){
     this.tablero=[]
     this.crearTablero=function(){
