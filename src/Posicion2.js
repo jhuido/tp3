@@ -16,7 +16,9 @@ function Posicion2(posiciony,posicionx){
         this.estado=estadoActual
     }
     this.encender=function(){
-        this.estado+=1;
+        if(this.estado<10){
+            this.estado+=1;
+        }
     }
     this.apagar=function(){
         
