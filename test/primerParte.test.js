@@ -1,5 +1,12 @@
 const Posicion=require('../src/Posicion')
 const Tablero=require('../src/Tablero')
+
+var tablero;
+beforeEach(()=>{
+    tablero=new Tablero();
+    tablero.crearTablero();
+})
+
 test("Prueba de posicion apagada inicialmente",()=>{
     var posicion=new Posicion(0,0);
     expect(posicion.estadoActual()).toBe("Apagado");
@@ -11,16 +18,13 @@ test("Que no se puedan crear posiciones fuera del tablero",()=>{
 })
 
 test("Crear tablero",()=>{
-    var tablero= new Tablero();
-    tablero.crearTablero();
     expect(tablero.tablero[0,1].estadoActual()).toBe("Apagado");
 }) 
 
 test("Funcion encender caso cuadrado",()=>{
     var verticeSuperior=new Posicion(0,0);
     var verticeInferior=new Posicion(2,2);
-    var tablero= new Tablero();
-    tablero.crearTablero();
+
     tablero.encender(verticeSuperior,verticeInferior);
     expect(tablero.tablero[0,0].estadoActual()).toBe("Encendido");
 
@@ -29,8 +33,7 @@ test("Funcion encender caso cuadrado",()=>{
 test("Apagar rectangulo",()=>{
     var verticeSuperior=new Posicion(0,1);
     var verticeInferior=new Posicion(2,2);
-    var tablero= new Tablero();
-    tablero.crearTablero();
+
     tablero.encender(verticeSuperior,verticeInferior);
     tablero.apagar(verticeSuperior,verticeInferior);
     expect(tablero.tablero[0,1].estadoActual()).toBe("Apagado");
@@ -44,8 +47,7 @@ test("Apagar rectangulo",()=>{
 test("Cambiar rectangulo de luces",()=>{
     var verticeSuperior=new Posicion(0,0);
     var verticeInferior=new Posicion(2,2);
-    var tablero= new Tablero()
-    tablero.crearTablero();
+
     tablero.encender(verticeSuperior,verticeInferior);
 
 
@@ -67,8 +69,6 @@ test("Cambiar rectangulo de luces",()=>{
 })
 
 test("Cantidad encendidas",()=>{
-    var tablero= new Tablero();
-    tablero.crearTablero();
     var verticeSuperior=new Posicion(0,0);
 
     var verticeInferior=new Posicion(1,1);
