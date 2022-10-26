@@ -1,13 +1,14 @@
 const Posicion2=require('../src/Posicion2')
 
 function Tablero2(){
-    this.tablero=[]
+    this.tablero=[];
     this.crearTablero=function(){
         var i=0;
         var j=0;
         for(i;i<100;i++){
-            for(j;j<100;j++){
-                this.tablero[i,j]=new Posicion2(i,j);
+            this.tablero[i]=new Array();
+            for(j=0;j<100;j++){
+                this.tablero[i][j]=new Posicion2(i,j);
             }
         }
     }
@@ -16,8 +17,8 @@ function Tablero2(){
         var i=verticeSuperior.posiciony;
         var j=verticeSuperior.posicionx;
         for(i;i<=verticeInferior.posiciony;i++){
-            for(j;j<=verticeInferior.posicionx;j++){
-                (this.tablero[i,j]).encender();
+            for(j=verticeSuperior.posicionx;j<=verticeInferior.posicionx;j++){
+                this.tablero[i][j].encender();
             }
         }
     }
@@ -25,7 +26,7 @@ function Tablero2(){
     this.apagar=function(verticeSuperior,verticeInferior){
         for(i=verticeSuperior.posiciony;i<=verticeInferior.posiciony;i++){
             for(j=verticeSuperior.posicionx;j<=verticeInferior.posicionx;j++){
-                (this.tablero[i,j]).apagar()
+                (this.tablero[i][j]).apagar()
             }
         }
     }
@@ -34,9 +35,9 @@ function Tablero2(){
         var i=verticeSuperior.posicionx;
         var j=verticeSuperior.posiciony;
         for(i;i<=verticeInferior.posiciony;i++){
-            for(j;j<=verticeInferior.posicionx;j++){
-                const estadoAntes=this.tablero[i,j].estadoActual();
-                this.tablero[i,j].cambiarEstado(estadoAntes+2);
+            for(j=verticeSuperior.posiciony;j<=verticeInferior.posicionx;j++){
+                const estadoAntes=this.tablero[i][j].estadoActual();
+                this.tablero[i][j].cambiarEstado(estadoAntes+2);
             };
         };
     }
@@ -47,7 +48,7 @@ function Tablero2(){
         var j;
         for(i=0;i<100;i++){
             for(j=0;j<100;j++){
-                if((this.tablero[i,j].estadoActual())!=0){
+                if((this.tablero[i][j].estadoActual())!=0){
                     n+=1;
                 }
             }
